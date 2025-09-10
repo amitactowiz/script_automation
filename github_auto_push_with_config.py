@@ -25,7 +25,7 @@ for root, dirs, files in os.walk(repo_path):
     for file in files:
         if file.endswith(".py"):
             rel_path = os.path.relpath(os.path.join(root, file), repo_path)
-            subprocess.run(f'git add "{rel_path}"', shell=True)
+            subprocess.run(f'git add .', shell=True)
 
 # Commit with timestamp
 commit_message = f"Auto push (only .py files) on {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
